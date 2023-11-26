@@ -9,6 +9,7 @@ import { loadButton } from './loadButton';
 import { deleteButton } from './deleteButton';
 import { configStore } from '#stores/config';
 import { publish } from '#stores/publish';
+import eventbus from '#lib/eventbus';
 import logger from '#lib/logger';
 
 
@@ -49,8 +50,7 @@ loadCollectionBox.append(collectionList);
 
 loadButton.on('press', () => {
   const { subject, payload } = configStore.$.collection.saved[collectionList.selected];
-  publish.$.subject = subject;
-  publish.$.payload = payload;
+  eventbus.emit('app:message:loaded', { subject, payload });
   hideDiaolog();
 });
 

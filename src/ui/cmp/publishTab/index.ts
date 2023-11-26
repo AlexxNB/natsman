@@ -8,6 +8,7 @@ import { publishButton } from './publishButton';
 import { requestButton } from './requestButton';
 import { saveButton } from './saveButton';
 import { loadButton } from './loadButton';
+import eventbus from '#lib/eventbus';
 
 export const publishTab = box({
   label: 'Publish message',
@@ -45,9 +46,12 @@ loadButton.bottom = 0;
 loadButton.left = saveButton.width;
 publishTab.append(loadButton);
 
+eventbus.on('app:message:loaded', ({ subject, payload }) => {
+  publish.$.subject = subject;
+  publish.$.payload = payload;
+});
+
 publish.$$(() => {
-  subjectInput.setValue(publish.$.subject);
-  payloadInput.setValue(publish.$.payload);
   togglePublishButtons();
 }, true);
 natsConnected.$$(togglePublishButtons);
