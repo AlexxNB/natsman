@@ -1,0 +1,13 @@
+export const fgColor = 'white';
+export const bgColor = 'black';
+export const borderFgColor = '#094d1b';
+export const inputBorderFgColor = '#3d3d3d';
+export const inputBorderFgColorHover = '#5e5e5e';
+export const inputBorderFgColorFocus = '#adadad';
+export const buttonFgColor = 'blue';
+export const buttonFgColorSecondary = '#5e5e5e';
+export const buttonFgColorAction = '#b34a00';
+export const buttonBgColorHover = '#adadad';
+export const scrollbarBgColor = 'blue';
+export const listFgColorSelected = 'blue';
+export const listBgColorSelected = '#3d3d3d';

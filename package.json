@@ -1,0 +1,31 @@
+{
+  "name": "natsman",
+  "version": "0.0.1",
+  "description": "NATS tool to monitor and send messages",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --raw 'npm:dev:bundle' 'npm:dev:app'",
+    "dev:bundle": "node esbuild.mjs --watch",
+    "dev:app": "node --watch --enable-source-maps _dev/app.js",
+    "build": "node esbuild.mjs",
+    "prestart": "npm run build",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "Alex Schebelev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/blessed": "^0.1.25",
+    "@types/node": "^20.9.1",
+    "concurrently": "^8.2.2",
+    "dayjs": "^1.11.10",
+    "esbuild": "^0.19.5",
+    "json-colorizer": "^2.2.2",
+    "nats": "^2.18.0",
+    "storxy": "^0.2.3"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "neo-blessed": "^0.2.0"
+  }
+}

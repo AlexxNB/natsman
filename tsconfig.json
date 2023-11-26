@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "target": "ES2022",
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "#ui/*": ["./src/ui/*"],
+      "#lib/*": ["./src/lib/*"],
+      "#stores/*": ["./src/stores/*"],
+      "#types/*": ["./src/types/*"],
+    },
+  },
+  "exclude": ["node_modules"]
+}
